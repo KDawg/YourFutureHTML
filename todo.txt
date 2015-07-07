@@ -1,0 +1,11 @@
+
+X separate J/S from index.html into its own
+X convert .css over to .scss using a color palette pulled from flatuicolors.co
+
+=> sass --watch cool_button.scss:cool_button.css
+
+X bring over my buttons CSS
+X create a simple page showing a button w/callback JavaScript
+X set up a simple polymer include
+  SEE: previous work, but bring in Polymer v1
+X set up the folder

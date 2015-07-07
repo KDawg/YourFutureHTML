@@ -1,0 +1,89 @@
+
+// colors courtesy of http://flatuicolors.co
+
+$alazarian: #E74C3C;
+$green-sea: #16A085;
+$peter-river: #3498DB;
+$silver: #BDC3C7;
+$sun-flower: #F1C40F;
+$wisteria: #8E44AD;
+
+
+@mixin ButtonNormalHoverActiveColors($baseColor) {
+  $tweakPercent: 5%;
+  $normalColor: $baseColor;
+  $lightColor: lighten($baseColor, 10%);
+  $darkColor: darken($baseColor, 10%);
+
+  background-image: -webkit-linear-gradient(top, lighten($normalColor, $tweakPercent) 0%, $normalColor 100%);
+  background-image: linear-gradient(top, lighten($normalColor, $tweakPercent) 0%, $normalColor 100%);
+  border: none;
+
+  &:hover {
+    background-image: -webkit-linear-gradient(top, lighten($lightColor, $tweakPercent) 0%, $lightColor 100%);
+    background-image: linear-gradient(top, lighten($lightColor, $tweakPercent) 0%, $lightColor 100%);
+  }
+
+  &:active {
+    background-image: -webkit-linear-gradient(top, lighten($darkColor, $tweakPercent) 0%, $darkColor 100%);
+    background-image: linear-gradient(top, lighten($darkColor, $tweakPercent) 0%, $darkColor 100%);
+  }
+}
+
+
+button {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  outline: none;
+  padding: 15px;
+  text-shadow: 0 1px 2px #444;
+
+  @include ButtonNormalHoverActiveColors($peter-river);
+}
+
+
+.alazarian {
+  @include ButtonNormalHoverActiveColors($alazarian);
+}
+
+.green-sea {
+  @include ButtonNormalHoverActiveColors($green-sea);
+}
+
+.peter-river {
+  @include ButtonNormalHoverActiveColors($peter-river);
+}
+
+.silver {
+  @include ButtonNormalHoverActiveColors($silver);
+}
+
+.sun-flower {
+  @include ButtonNormalHoverActiveColors($sun-flower);
+}
+
+
+.wisteria {
+  @include ButtonNormalHoverActiveColors($wisteria);
+}
+
+
+.large {
+  padding: 25px;
+  min-width: 150px;
+}
+
+
+.small {
+  font-size: 14px;
+  padding: 10px;
+}
+
+
+.full-wide {
+  width: 100%;
+}

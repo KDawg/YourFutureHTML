@@ -1,0 +1,20 @@
+{
+  "name": "<your-future-html> the Evolution of Site Design with Web Components",
+  "version": "0.2.1",
+  "authors": [
+    "Ken Tabor <whatsfirst@katworksgames.com>"
+  ],
+  "description": "R&D exploring the latest on Polymer for web components",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
