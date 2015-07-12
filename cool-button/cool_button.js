@@ -31,10 +31,30 @@ CoolButton = Polymer({
 
   ready: function() {
     this.data = undefined;
-    console.log('CoolButton.ready');
 
-    if (this.bodycolor) this.$.btn.className += ' ' + this.bodycolor;
-    if (this.size) this.$.btn.className += ' ' + this.size;
+    if (this._bodyColorValid()) this._bodyColorApply();
+    if (this._sizeValid()) this._sizeApply();
+  },
+
+  _bodyColorValid: function() {
+    var COLORS = ['alazarian', 'green-sea', 'peter-river', 'silver', 'sun-flower', 'wisteria'];
+    var isValid = COLORS.indexOf(this.bodycolor) >= 0;
+
+    if (!isValid) console.log('invalid body color [' + this.bodycolor + ']');
+
+    return isValid;
+  },
+
+  _bodyColorApply: function() {
+    this.$.btn.className += ' ' + this.bodycolor;
+  },
+
+  _sizeValid: function() {
+    return this.size;
+  },
+
+  _sizeApply: function() {
+    this.$.btn.className += ' ' + this.size;
   },
 
   saySomething: function() {
