@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="tv-listing">
+  <link rel="import" type="css" href="tv_listing.css">
+  <template>
+    <select id="genres">
+      <option value="comedy" selected="true">Comedy</option>
+      <option value="crime">Crime</option>
+      <option value="languages">Langauges</option>
+      <option value="music">Music</option>
+      <option value="football">Football</option>
+    </select>
+    <cool-button on-click="onClicked" id="btn-normal" bodycolor="sun-flower" size="large" value="42" label="Press Me!"></cool-button>
+
+    <h4>Program Listing</h4>
+    <section id="programList">
+      <ul id="resultsList">
+
+        <template is="dom-repeat" items="{{listingResults}}">
+          <li class="listing-entry" data-blarg="booga" on-click="onProrgamEntry" data-index="{{index}}">
+            <div data-num={{index}}>{{index}}</div>
+            <div>First name: <span>{{item.programme.display_titles.title}}</span></div>
+            <div>Last name: <span>{{item.start}}</span></div>
+          </li>
+        </template>
+        <!--<array-selector id="selector" items="{{employees}}" selected="{{selected}}"-->
+      </ul>
+    </section>
+
+    <h4>Look for dynamic changes below this:</h4>
+    <p>Results list is long [<span>{{genre}}</span>]</p>
+
+    <template is="dom-if" if="{{listingResults.length}}">
+      <p>Results list is long [<span>{{listingResults.length}}</span>]</p>
+    </template>
+
+  </template>
+</dom-module>
+
+<script src="tv-listing.js"></script>
