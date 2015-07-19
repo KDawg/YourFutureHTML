@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <dom-module id="tv-listing">
-  <link rel="import" type="css" href="tv_listing.css">
+  <link rel="import" type="css" href="tv-listing.css">
   <template>
     <select id="genres">
       <option value="comedy" selected="true">Comedy</option>
@@ -10,28 +10,36 @@
       <option value="music">Music</option>
       <option value="football">Football</option>
     </select>
-    <cool-button on-click="onClicked" id="btn-normal" bodycolor="sun-flower" size="large" value="42" label="Press Me!"></cool-button>
+    <cool-button on-click="onClicked" id="btn-normal" bodycolor="sun-flower" label="Press Me!"></cool-button>
+    <br/>
 
-    <h4>Program Listing</h4>
     <section id="programList">
-      <ul id="resultsList">
+      <ul id="resultsList" class="listing">
+        <li class="entry heading" on-click="onProrgamEntry">
+          BBC TV Listing for [<span class="genre-type">{{genre}}</span>]
+        </li>
 
         <template is="dom-repeat" items="{{listingResults}}">
-          <li class="listing-entry" data-blarg="booga" on-click="onProrgamEntry" data-index="{{index}}">
-            <div data-num={{index}}>{{index}}</div>
-            <div>First name: <span>{{item.programme.display_titles.title}}</span></div>
-            <div>Last name: <span>{{item.start}}</span></div>
+          <li class="entry" on-click="onProrgamEntry">
+            <div class="entry-title"><span class="entry-part">Title:</span> <span>{{item.programme.display_titles.title}}</span>
+            </div>
+            <div class="entry-date"><span class="entry-part">Date:</span> <span>{{item.start}}</span></div>
+            <div class="entry-channel"><span class="entry-part">Channel:</span> <span>{{item.service.title}}</span>
+            </div>
+            <div class="entry-synopsis"><span class="entry-part">Synopsis:</span> <span>{{item.programme.short_synopsis}}</span>
+            </div>
           </li>
         </template>
-        <!--<array-selector id="selector" items="{{employees}}" selected="{{selected}}"-->
       </ul>
+
     </section>
 
-    <h4>Look for dynamic changes below this:</h4>
-    <p>Results list is long [<span>{{genre}}</span>]</p>
-
     <template is="dom-if" if="{{listingResults.length}}">
-      <p>Results list is long [<span>{{listingResults.length}}</span>]</p>
+      <ul class="listing">
+        <li class="entry footing" on-click="onProrgamEntry">
+          Results list is [<span>{{listingResults.length}}</span>] entries long
+        </li>
+      </ul>
     </template>
 
   </template>
