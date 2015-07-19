@@ -1,4 +1,13 @@
 
+_ code review all tv-listing names for consistency
+
+_ index2.html listen to tv-listing click event, simple data display
+_ tv-listing click on an entry signal event up to owner
+
+X tv-listing <select> bind to an attribute
+X add browser platform status links to keynote
+X Style up tv-listing
+
 X separate J/S from index.html into its own
 X convert .css over to .scss using a color palette pulled from flatuicolors.co
 
