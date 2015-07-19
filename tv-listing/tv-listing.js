@@ -85,7 +85,11 @@ CoolButton = Polymer({
 
   onProrgamEntry: function(e) {
     var model = e.model;
-    console.log('clicked a program listing item', model.item, model.index);
+
+    this.fire('tvlisting:clicked', {
+      data: model.item,
+      index: model.index
+    });
   }
 
 });
