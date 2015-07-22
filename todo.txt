@@ -1,6 +1,9 @@
 
 _ code review all tv-listing names for consistency
 
+_ write READ.ME file introducing all of this as per the BigD Conf talk
+X rework index.html files, make one opener, then click to secondary levels foreach web comp
+
 X index2.html listen to tv-listing click event, simple data display
 X tv-listing click on an entry signal event up to owner
 
