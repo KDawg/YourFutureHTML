@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <dom-module id="tv-listing">
-  <link rel="import" type="css" href="tv-listing.css">
+  <link rel="import" type="css" href="tv_listing.css">
   <template>
     <select id="genres" value="{{genre::change}}">
       <option value="comedy" selected="true">Comedy</option>
@@ -15,12 +15,12 @@
 
     <section id="programList">
       <ul id="resultsList" class="listing">
-        <li class="entry heading" on-click="onProrgamEntry">
+        <li class="entry heading">
           BBC TV Listing for [<span class="genre-type">{{genre}}</span>]
         </li>
 
         <template is="dom-repeat" items="{{listingResults}}">
-          <li class="entry" on-click="onProrgamEntry">
+          <li class="entry" on-click="onProgramEntry">
             <div class="entry-title"><span class="entry-part">Title:</span> <span>{{item.programme.display_titles.title}}</span>
             </div>
             <div class="entry-date"><span class="entry-part">Date:</span> <span>{{item.start}}</span></div>
@@ -36,7 +36,7 @@
 
     <template is="dom-if" if="{{listingResults.length}}">
       <ul class="listing">
-        <li class="entry footing" on-click="onProrgamEntry">
+        <li class="entry footing">
           Results list is [<span>{{listingResults.length}}</span>] entries long
         </li>
       </ul>
@@ -45,4 +45,4 @@
   </template>
 </dom-module>
 
-<script src="tv-listing.js"></script>
+<script src="tv_listing.js"></script>

@@ -42,11 +42,11 @@ CoolButton = Polymer({
 
   listingLoad: function() {
     var GENRE_URLS = {
-      comedy: 'tv-listing/mock/comedy_standup_mock.json',
-      crime: 'tv-listing/mock/drama_crime_mock.json',
-      languages: 'tv-listing/mock/learning_languages_mock.json',
-      music: 'tv-listing/mock/music_classicalpoprock_mock.json',
-      football: 'tv-listing/mock/sport_football_mock.json'
+      comedy: 'tv_listing/mock/comedy_standup_mock.json',
+      crime: 'tv_listing/mock/drama_crime_mock.json',
+      languages: 'tv_listing/mock/learning_languages_mock.json',
+      music: 'tv_listing/mock/music_classicalpoprock_mock.json',
+      football: 'tv_listing/mock/sport_football_mock.json'
     };
 
     var url = GENRE_URLS[this.genre];
@@ -83,7 +83,7 @@ CoolButton = Polymer({
     this.$.programList.hidden = false;
   },
 
-  onProrgamEntry: function(e) {
+  onProgramEntry: function(e) {
     var model = e.model;
 
     this.fire('tvlisting:clicked', {
