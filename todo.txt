@@ -1,7 +1,9 @@
 
+X ordinary button click
+  shows Red cool button
+  click Red cool button shows the remainder...
+
 X code review all tv-listing names for consistency
-
-
 X write READ.ME file introducing all of this as per the BigD Conf talk
 X rework index.html files, make one opener, then click to secondary levels foreach web comp
 
@@ -22,3 +24,5 @@ X create a simple page showing a button w/callback JavaScript
 X set up a simple polymer include
   SEE: previous work, but bring in Polymer v1
 X set up the folder
+
+
