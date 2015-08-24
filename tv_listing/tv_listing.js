@@ -12,6 +12,7 @@ CoolButton = Polymer({
       type: String,
       reflectToAttribute: true,
       notify: true,
+      observer: 'onGenreChanged',
       value: 'crime'
     },
 
@@ -36,8 +37,8 @@ CoolButton = Polymer({
   },
 
   // event handlers
-  onClicked: function() {
-    this.listingLoad();
+  onViewHelp: function() {
+    alert('Helping you out with Web Components R&D!');
   },
 
   listingLoad: function() {
@@ -83,13 +84,18 @@ CoolButton = Polymer({
     this.$.programList.hidden = false;
   },
 
-  onProgramEntry: function(e) {
+  onListSelect: function(e) {
     var model = e.model;
 
     this.fire('tvlisting:clicked', {
       data: model.item,
       index: model.index
     });
+  },
+
+  onGenreChanged: function(e) {
+    console.log('onGenreChanged[' + e + ']');
+    this.listingLoad();
   }
 
 });

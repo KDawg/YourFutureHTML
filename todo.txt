@@ -25,4 +25,3 @@ X set up a simple polymer include
   SEE: previous work, but bring in Polymer v1
 X set up the folder
 
-

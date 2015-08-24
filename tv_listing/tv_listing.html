@@ -10,7 +10,7 @@
       <option value="music">Music</option>
       <option value="football">Football</option>
     </select>
-    <cool-button on-click="onClicked" id="btn-normal" bodycolor="sun-flower" label="Press Me!"></cool-button>
+    <cool-button on-click="onViewHelp" id="btn-help" bodycolor="sun-flower" label="View Help!"></cool-button>
     <br/>
 
     <section id="programList">
@@ -20,7 +20,7 @@
         </li>
 
         <template is="dom-repeat" items="{{listingResults}}">
-          <li class="entry" on-click="onProgramEntry">
+          <li class="entry" on-click="onListSelect">
             <div class="entry-title"><span class="entry-part">Title:</span> <span>{{item.programme.display_titles.title}}</span>
             </div>
             <div class="entry-date"><span class="entry-part">Date:</span> <span>{{item.start}}</span></div>
