@@ -13,8 +13,13 @@ CoolButton = Polymer({
       notify: true
     },
 
-    value: {
+    quantity: {
       type: Number,
+      notify: true
+    },
+
+    product: {
+      type: String,
       notify: true
     },
 
@@ -68,8 +73,8 @@ CoolButton = Polymer({
   // event handlers
   onClicked: function() {
     this.fire('clicked', {
-      msg: this.label,
-      data: this.value
+      quantity: this.quantity,
+      product: this.product
     });
   },
 

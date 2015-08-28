@@ -24,4 +24,3 @@ X create a simple page showing a button w/callback JavaScript
 X set up a simple polymer include
   SEE: previous work, but bring in Polymer v1
 X set up the folder
-
