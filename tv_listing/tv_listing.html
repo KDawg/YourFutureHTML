@@ -3,15 +3,20 @@
 <dom-module id="tv-listing">
   <link rel="import" type="css" href="tv_listing.css">
   <template>
-    <select id="genres" value="{{genre::change}}">
-      <option value="comedy" selected="true">Comedy</option>
-      <option value="crime">Crime</option>
-      <option value="languages">Langauges</option>
-      <option value="music">Music</option>
-      <option value="football">Football</option>
-    </select>
-    <cool-button on-click="onViewHelp" id="btn-help" bodycolor="sun-flower" label="View Help!"></cool-button>
-    <br/>
+    <div style = "margin-bottom: 20px;">
+      <select id="genres" value="{{genre::change}}">
+        <option value="comedy" selected="true">Comedy</option>
+        <option value="crime">Crime</option>
+        <option value="languages">Langauges</option>
+        <option value="music">Music</option>
+        <option value="football">Football</option>
+      </select>
+
+      <cool-button on-click="onHelp" id="btn-help" bodycolor="sun-flower" label="View Help!"></cool-button>
+      <cool-button on-click="onMusic" id="btn-music" bodycolor="green-sea" label="Music"></cool-button>
+      <cool-button on-click="onComedy" id="btn-comedy" bodycolor="wisteria" label="Comedy"></cool-button>
+      <cool-button on-click="onFootball" id="btn-football" bodycolor="alazarian" label="Football"></cool-button>
+    </div>
 
     <section id="programList">
       <ul id="resultsList" class="listing">

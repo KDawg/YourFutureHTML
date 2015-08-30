@@ -36,9 +36,20 @@ CoolButton = Polymer({
     console.log('Booga Booga Booga');
   },
 
-  // event handlers
-  onViewHelp: function() {
-    alert('Helping you out with Web Components R&D!');
+  onHelp: function() {
+    alert('Helping you out with Web Components R&D! SEE: github.com/KDawg/YourFutureHTML');
+  },
+
+  onMusic: function() {
+    this.genre = 'music';
+  },
+
+  onComedy: function() {
+    this.genre = 'comedy';
+  },
+
+  onFootball: function() {
+    this.genre = 'football';
   },
 
   listingLoad: function() {
@@ -50,9 +61,9 @@ CoolButton = Polymer({
       football: 'tv_listing/mock/sport_football_mock.json'
     };
 
+    var _this = this;
     var url = GENRE_URLS[this.genre];
     var request = new XMLHttpRequest();
-    var _this = this;
 
     request.open('GET', url, true);
     request.onload = function() {
