@@ -65,6 +65,8 @@ CoolButton = Polymer({
     var url = GENRE_URLS[this.genre];
     var request = new XMLHttpRequest();
 
+    url = this._debugFilterUrl(url);
+
     request.open('GET', url, true);
     request.onload = function() {
       if (request.status >= 200 && request.status < 400) {
@@ -80,6 +82,13 @@ CoolButton = Polymer({
       console.log('connection error');
     };
     request.send();
+  },
+
+  _debugFilterUrl: function(url) {
+    if (this.baseURI === 'http://bigdesigndallas.com/') {
+      url = 'http://127.0.0.1/YourFutureHTML/' + url;
+    }
+    return url;
   },
 
   attributeChanged: function(name, type) {
